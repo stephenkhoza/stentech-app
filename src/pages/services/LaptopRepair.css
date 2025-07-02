@@ -1,0 +1,6 @@
+.core-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+   padding-top: 100px; /* Adjust based on your header height */
+}

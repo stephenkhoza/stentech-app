@@ -1,0 +1,126 @@
+/* Pricing.css */
+
+/* Gradient heading */
+.gradient-text {
+  background: -webkit-linear-gradient(#808080, #2ca19c);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Main content container */
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 50px;
+  padding: 20px;
+  margin-top: 120px;
+}
+
+/* Text section */
+.service-description h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.service-description p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Image card rail */
+.image-card-rail {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.image-card-slide {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+}
+
+.image-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+
+.image-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.image-card a {
+  display: block;
+  margin-top: 10px;
+  color: #2ca19c;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.image-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-card a:hover {
+  color: #1a7a6b;
+}
+
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  .service-description h2 {
+    font-size: 1.4rem;
+  }
+
+  .service-description p {
+    font-size: 0.95rem;
+  }
+
+  .image-card-slide {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .service-description h2 {
+    font-size: 1.2rem;
+  }
+
+  .service-description p {
+    font-size: 0.9rem;
+  }
+
+  .image-card-slide {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .image-card-slide {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

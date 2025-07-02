@@ -1,0 +1,134 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* General content styling */
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 50px;
+  padding: 20px;
+  color: #5094ce;
+  margin-top: 120px;
+}
+
+#who-we-are-hero-wp {
+  background: -webkit-linear-gradient(#808080, #333);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 0;
+  padding-top: 130px;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  margin-top: -60px;
+}
+
+.service-image img {
+  margin-top: 20px;
+  margin-left: 30px;
+  border-radius: 8px;
+}
+
+.service-description h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-description p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.gradient-text {
+  background: -webkit-linear-gradient(#808080, #2ca19c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #2ca19c;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #006a67;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .content {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .service-item {
+    gap: 15px;
+  }
+
+  .service-description h3 {
+    font-size: 1.4rem;
+  }
+
+  .service-description p {
+    font-size: 0.95rem;
+  }
+
+  .service-image img {
+    max-width: 500px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .content {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .service-description h3 {
+    font-size: 1.2rem;
+  }
+
+  .service-description p {
+    font-size: 0.9rem;
+  }
+
+  .service-image img {
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 15px;
+  }
+}
+
+

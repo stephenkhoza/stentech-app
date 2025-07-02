@@ -1,0 +1,268 @@
+/* Smartphone Brand Selector Section Styles */
+.text-center {
+  text-align: center !important;
+}
+
+.core-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px; /* Adjust based on your header height */
+}
+
+.core-layout__viewport {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.product-selector {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content-area {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  padding: 3rem 2rem;
+  margin: 2rem 0;
+}
+
+/* Main Heading */
+.product-selector-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+}
+
+.product-selector-heading span {
+  background: linear-gradient(135deg, #2ca19c 0%, #238f89 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Device List */
+.device-list {
+  margin-top: 2rem;
+}
+
+.device-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 2rem;
+}
+
+/* Grid Layout */
+.row-alternative {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Form Selector */
+.form-selector {
+  margin-bottom: 1.5rem;
+}
+
+/* Product Card */
+.unsigned-more-product-card {
+  background: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 16px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.unsigned-more-product-card:hover {
+  border-color: #2ca19c;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(44, 161, 156, 0.15);
+}
+
+.unsigned-more-product-card:focus {
+  outline: 3px solid rgba(44, 161, 156, 0.3);
+  outline-offset: 2px;
+}
+
+/* Form Selector Label */
+.form-selector-label {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.details-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1.5rem;
+}
+
+/* Device Link */
+.device-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.device-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Left Column Content */
+.form-selector-left-col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Device Image */
+.device-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.unsigned-more-product-card:hover .device-image {
+  transform: scale(1.1);
+}
+
+/* Device Title */
+.form-selector-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: left;
+  margin: 0;
+}
+
+.product-form-selector-title {
+  transition: color 0.3s ease;
+}
+
+.unsigned-more-product-card:hover .product-form-selector-title {
+  color: #2ca19c;
+}
+
+/* Active/Selected State */
+.unsigned-more-product-card:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(44, 161, 156, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  .product-selector-heading {
+    font-size: 2.5rem;
+  }
+
+  .content-area {
+    padding: 2rem 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .row-alternative {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 767.98px) {
+  .product-selector-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .device-heading {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .content-area {
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+  }
+
+  .details-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .device-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .form-selector-title {
+    font-size: 0.9rem;
+  }
+
+  .row-alternative {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .core-layout__viewport {
+    padding: 1rem 0;
+  }
+
+  .product-selector {
+    padding: 0 10px;
+  }
+
+  .product-selector-heading {
+    font-size: 1.75rem;
+  }
+
+  .content-area {
+    padding: 1.25rem 0.75rem;
+    margin: 0.5rem 0;
+  }
+
+  .details-container {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .device-image {
+    width: 36px;
+    height: 36px;
+  }
+
+  .form-selector-title {
+    font-size: 0.85rem;
+  }
+
+  .row-alternative {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Focus and accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .unsigned-more-product-card,
+  .device-image,
+  .product-form-selector-title {
+    transition: none;
+  }
+}

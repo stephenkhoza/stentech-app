@@ -1,0 +1,214 @@
+/* Customer Support Section Styles */
+.custom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.my-5 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+.py-5 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Main Title */
+.custom-container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 3rem;
+}
+
+/* Grid Layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.col-md-4,
+.col-sm-6 {
+  padding: 0 15px;
+}
+
+.col-md-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.col-sm-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+/* Card Styles */
+.card {
+  width: 18rem;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Card Content */
+.card h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 1.5rem 1.5rem 1rem 1.5rem;
+  line-height: 1.3;
+}
+
+.card p {
+  color: #6c757d;
+  line-height: 1.6;
+  margin: 0 1.5rem 1.5rem 1.5rem;
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+/* Button Styles */
+.btn {
+  background: linear-gradient(135deg, #2ca19c 0%, #238f89 100%);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin: 0 1.5rem 1.5rem 1.5rem;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #238f89 0%, #1d7a75 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 161, 156, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .col-sm-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .custom-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .my-5 {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .custom-container h2 {
+    font-size: 1.75rem;
+  }
+  
+  .card {
+    max-width: 300px;
+  }
+  
+  .card h5 {
+    font-size: 1.25rem;
+    margin: 1rem 1rem 0.75rem 1rem;
+  }
+  
+  .card p {
+    margin: 0 1rem 1rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .btn {
+    margin: 0 1rem 1rem 1rem;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Card Image Aspect Ratio Fix */
+@media (max-width: 480px) {
+  .card img {
+    height: 180px;
+  }
+}

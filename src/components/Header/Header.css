@@ -1,0 +1,534 @@
+/* src/components/Header/Header.css */
+
+.header {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.header.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* OPTIMIZED Top bar - reduced padding */
+.top-bar {
+  background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+  color: white;
+  padding: 0px 0; /* Reduced for compactness */
+  font-size: 12px;
+  font-weight: 400;
+  width: 100%;
+}
+
+.top-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.top-bar a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.top-bar a:hover {
+  color: #a7f3d0;
+}
+
+/* OPTIMIZED Logo styling - reduced sizes */
+.logo {
+  height: 45px; /* Reduced from 45px */
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled .logo {
+  height: 40px; /* Reduced from 40px */
+}
+
+/* OPTIMIZED Main navigation - reduced padding */
+.main-nav {
+  padding: 8px 0; /* Reduced from 12px */
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.header.scrolled .main-nav {
+  padding: 6px 0; /* Reduced from 8px */
+}
+
+.main-nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo container - always on left */
+.logo-container {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Desktop navigation */
+.desktop-nav {
+  display: none;
+  align-items: center;
+  gap: 6px; /* Reduced gap */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header actions - always on right */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Reduced gap */
+  margin-left: auto;
+}
+
+/* Desktop navigation - shown on 1024px and up */
+@media (min-width: 1024px) {
+  .desktop-nav {
+    display: flex;
+  }
+  
+  .mobile-menu-btn {
+    display: none !important;
+  }
+  
+  .nav-item {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* OPTIMIZED nav links - reduced padding and font size */
+  .nav-link {
+    color: #374151;
+    font-weight: 500;
+    font-size: 14px; /* Reduced from 15px */
+    padding: 6px 12px; /* Reduced from 8px 16px */
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    color: #0d9488;
+    background-color: #f0fdfa;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+    margin-top: 8px;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .dropdown-item {
+    display: block;
+    padding: 10px 14px; /* Slightly reduced */
+    color: #374151;
+    font-size: 13px; /* Reduced from 14px */
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f3f4f6;
+    white-space: nowrap;
+  }
+  
+  .dropdown-item:last-child {
+    border-bottom: none;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .dropdown-item:first-child {
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f0fdfa;
+    color: #0d9488;
+    padding-left: 18px; /* Reduced from 20px */
+  }
+}
+
+/* OPTIMIZED CTA Button - reduced padding */
+.cta-button {
+  background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+  color: white;
+  padding: 8px 16px; /* Reduced from 10px 20px */
+  border-radius: 20px; /* Reduced radius */
+  font-weight: 600;
+  font-size: 13px; /* Reduced from 14px */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.3);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
+}
+
+/* OPTIMIZED WhatsApp button - reduced padding */
+.whatsapp-btn {
+  background: #25d366;
+  color: white;
+  padding: 6px 10px; /* Reduced from 8px 12px */
+  border-radius: 16px; /* Reduced radius */
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* Reduced gap */
+  font-size: 12px; /* Reduced from 13px */
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+  background: #128c7e;
+  transform: scale(1.05);
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  padding: 6px; /* Reduced from 8px */
+  border: none;
+  background: none;
+  color: #374151;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mobile-menu-btn:hover {
+  background-color: #f3f4f6;
+  color: #0d9488;
+}
+
+/* Mobile menu container */
+.mobile-menu-container {
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: calc(100vh - 80px); /* Reduced from 120px */
+  overflow-y: auto;
+  animation: slideDown 0.3s ease-out;
+  width: 100%;
+}
+
+.mobile-nav-item {
+  border-bottom: 1px solid #f3f4f6;
+  padding: 10px 0; /* Reduced from 12px */
+}
+
+.mobile-nav-item:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav-link {
+  color: #374151;
+  font-weight: 500;
+  font-size: 15px; /* Reduced from 16px */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 6px 0; /* Reduced from 8px */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-nav-link:hover {
+  color: #0d9488;
+}
+
+.mobile-submenu {
+  margin-top: 6px; /* Reduced from 8px */
+  margin-left: 16px;
+  padding-left: 16px;
+  border-left: 2px solid #e5e7eb;
+}
+
+.mobile-submenu-item {
+  padding: 5px 0; /* Reduced from 6px */
+}
+
+.mobile-submenu-link {
+  color: #6b7280;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mobile-submenu-link:hover {
+  color: #0d9488;
+}
+
+/* Mobile actions */
+.mobile-actions {
+  padding-top: 14px; /* Reduced from 16px */
+  border-top: 1px solid #e5e7eb;
+  margin-top: 14px; /* Reduced from 16px */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Reduced from 12px */
+}
+
+.mobile-action-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Smooth transitions for mobile submenu chevrons */
+.chevron-icon {
+  transition: transform 0.2s ease;
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Reduced from 12px */
+}
+
+.social-icon {
+  color: white;
+  font-size: 13px; /* Reduced from 14px */
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon:hover {
+  color: #a7f3d0;
+  transform: scale(1.1);
+}
+
+/* Contact info styling */
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px; /* Reduced from 13px */
+  white-space: nowrap;
+}
+
+.contact-info svg {
+  width: 13px; /* Reduced from 14px */
+  height: 13px;
+  flex-shrink: 0;
+}
+
+/* Divider styling */
+.divider {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 8px;
+  flex-shrink: 0;
+}
+
+/* OPTIMIZED Header spacing - significantly reduced */
+.header-spacer {
+  height: 20px; /* Reduced from 120px for desktop */
+}
+
+/* MOBILE PHONE SPECIFIC STYLES - Hide top bar on mobile phones */
+@media (max-width: 767px) {
+  /* Hide the entire top bar on mobile phones */
+  .top-bar {
+    display: none !important;
+  }
+  
+  /* Adjust main navigation for mobile */
+  .main-nav {
+    padding: 8px 0;
+  }
+  
+  .logo {
+    height: 40px; /* Reduced from 40px */
+  }
+  
+  /* Mobile menu button visible on mobile */
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+  
+  /* Hide desktop navigation on mobile */
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  /* Adjust header spacing for mobile without top bar */
+  .header-spacer {
+    height: 10px; /* Reduced from 70px */
+  }
+  
+  /* Hide some header actions on mobile */
+  .header-actions .nav-link,
+  .header-actions .whatsapp-btn {
+    display: none;
+  }
+}
+
+/* Tablet view adjustments (768px-1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+  
+  .logo {
+    height: 40px; /* Reduced from 40px */
+  }
+  
+  .cta-button {
+    padding: 7px 14px; /* Reduced */
+    font-size: 12px;
+  }
+  
+  .header-spacer {
+    height: 10px; /* Reduced from 100px */
+  }
+  
+  /* Adjust top bar for tablet */
+  .top-bar-left .contact-info:nth-child(n+3) {
+    display: none;
+  }
+  
+  .top-bar-left .divider:nth-child(n+4) {
+    display: none;
+  }
+}
+
+/* Extra small mobile phones */
+@media (max-width: 480px) {
+  .main-nav {
+    padding: 6px 0; /* Reduced from 10px */
+  }
+  
+  .logo {
+    height: 36px; /* Reduced from 36px */
+  }
+  
+  .mobile-menu-btn {
+    padding: 5px; /* Reduced from 6px */
+  }
+  
+  .header-spacer {
+    height: 10px; /* Reduced from 65px */
+  }
+  
+  .cta-button {
+    padding: 6px 10px; /* Reduced from 8px 12px */
+    font-size: 11px; /* Reduced from 12px */
+  }
+}
+
+/* Animation keyframes */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility improvements */
+.header button:focus,
+.header a:focus {
+  outline: 2px solid #0d9488;
+  outline-offset: 2px;
+}
+
+/* Prevent mobile menu body scroll */
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* Utility classes */
+.hidden {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .xl\:inline {
+    display: inline;
+  }
+}
+
+/* Ensure proper box sizing */
+* {
+  box-sizing: border-box;
+}
+
+.header * {
+  max-width: 100%;
+}

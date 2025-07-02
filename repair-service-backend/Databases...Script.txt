@@ -1,0 +1,85 @@
+-- Connect to PostgreSQL as superuser (usually postgres)
+-- Run this in psql or your PostgreSQL client
+
+-- Create the database
+CREATE DATABASE stentech_repair;
+
+-- Connect to the new database
+\c stentech_repair;
+
+-- Create bookings table (assuming this is what you need based on the booking data)
+CREATE TABLE bookings (
+    id SERIAL PRIMARY KEY,
+    device_type VARCHAR(100) NOT NULL,
+    device_brand VARCHAR(100) NOT NULL,
+    device_model VARCHAR(100) NOT NULL,
+    issue_description TEXT NOT NULL,
+    full_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    address TEXT NOT NULL,
+    preferred_date DATE NOT NULL,
+    preferred_time VARCHAR(50) NOT NULL,
+    service_type VARCHAR(50) NOT NULL,
+    status VARCHAR(50) DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create an index on email for faster lookups
+CREATE INDEX idx_bookings_email ON bookings(email);
+
+-- Create an index on status for filtering
+CREATE INDEX idx_bookings_status ON bookings(status);
+
+
+
+
+
+
+
+
+
+
+-- Connect to your PostgreSQL database as a superuser (postgres user)
+-- Run these commands to fix the permissions issue
+
+-- Connect to the stentech_repair database
+\c stentech_repair;
+
+-- Grant database connection privileges
+GRANT CONNECT ON DATABASE stentech_repair TO repair_admin;
+
+-- Grant schema usage privileges (assuming tables are in public schema)
+GRANT USAGE ON SCHEMA public TO repair_admin;
+
+-- Grant table privileges for existing tables
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO repair_admin;
+
+-- Grant sequence privileges (needed for SERIAL/auto-increment columns)
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO repair_admin;
+
+-- Grant default privileges for future tables and sequences
+-- This ensures repair_admin gets permissions on any new tables created
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO repair_admin;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT USAGE, SELECT ON SEQUENCES TO repair_admin;
+
+-- Specifically grant privileges on the bookings and booking_images tables if they exist
+GRANT SELECT, INSERT, UPDATE, DELETE ON bookings TO repair_admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON booking_images TO repair_admin;
+
+-- Grant sequence privileges for the booking ID sequences
+GRANT USAGE, SELECT ON bookings_id_seq TO repair_admin;
+GRANT USAGE, SELECT ON booking_images_id_seq TO repair_admin;
+
+-- Verify permissions (optional - run to check what permissions repair_admin has)
+SELECT 
+    schemaname,
+    tablename,
+    has_table_privilege('repair_admin', schemaname||'.'||tablename, 'SELECT') as select_priv,
+    has_table_privilege('repair_admin', schemaname||'.'||tablename, 'INSERT') as insert_priv,
+    has_table_privilege('repair_admin', schemaname||'.'||tablename, 'UPDATE') as update_priv,
+    has_table_privilege('repair_admin', schemaname||'.'||tablename, 'DELETE') as delete_priv
+FROM pg_tables 
+WHERE schemaname = 'public' 
+AND tablename IN ('bookings', 'booking_images');

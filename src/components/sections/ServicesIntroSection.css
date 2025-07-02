@@ -1,0 +1,167 @@
+/* ServicesIntroSection.css */
+
+.service-container {
+  padding: 4rem 0;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  
+  
+}
+
+.service-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .service-wrapper {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-wrapper {
+    padding: 0 2rem;
+  }
+}
+
+.service-content {
+  display: flex;
+  justify-content: center;
+}
+
+.service-inner {
+  max-width: 56rem;
+  text-align: center;
+}
+
+/* Service Icon */
+.service-icon {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  width: 120px;
+  height: 120px;
+}
+
+/* Main Heading */
+.service-heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .service-heading {
+    font-size: 3rem;
+  }
+}
+
+/* Description Text */
+.service-description {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .service-description {
+    font-size: 1.25rem;
+  }
+}
+
+/* Link Styling */
+.service-link {
+  color: #0d9488;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.service-link:hover {
+  color: #0f766e;
+}
+
+/* Button Container */
+.service-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  .service-buttons {
+    flex-direction: row;
+  }
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: #0d9488;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+  min-width: 140px;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #0f766e;
+  color: #ffffff;
+}
+
+/* Outline Button */
+.btn-outline {
+  border: 2px solid #0d9488;
+  color: #0d9488;
+  background-color: transparent;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  min-width: 140px;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn-outline:hover {
+  background-color: #0d9488;
+  color: #ffffff;
+}
+
+/* Button Focus States */
+.btn-primary:focus,
+.btn-outline:focus {
+  outline: 2px solid #0d9488;
+  outline-offset: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 639px) {
+  .service-container {
+    padding: 3rem 0;
+  }
+  
+  .service-heading {
+    font-size: 2rem;
+  }
+  
+  .service-description {
+    font-size: 1rem;
+  }
+}

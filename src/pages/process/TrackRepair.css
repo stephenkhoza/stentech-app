@@ -1,0 +1,156 @@
+.page-banner {
+ background-image: url("../../assets/repair-tracking-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-top: 120px;
+}
+
+
+.page-banner h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tracking-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.tracking-form {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.tracking-form h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.tracking-status {
+  margin-top: 30px;
+  
+}
+
+.tracking-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 100%;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 10px;
+  background-color: #2ca19c;
+  border-radius: 50%;
+  top: 15px;
+  z-index: 1;
+}
+
+.timeline-item.active::after {
+  background-color: #2ca19c;
+}
+
+.timeline-item.pending::after {
+  background-color: #ccc;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: #ddd;
+  top: 0;
+  bottom: 0;
+  left: 19px;
+}
+
+.timeline-item:first-child::before {
+  top: 15px;
+}
+
+.timeline-item:last-child::before {
+  height: 15px;
+}
+
+.timeline-content {
+  padding: 10px 15px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item.active .timeline-content {
+  border-left: 3px solid #2ca19c;
+}
+
+.timeline-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.timeline-content p {
+  margin-bottom: 0;
+  color: #666;
+}
+
+.timeline-date {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.faq-section {
+  padding: 60px 0;
+}
+
+.faq-card {
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.faq-card .card-header {
+  background-color: white;
+  border-bottom: none;
+  padding: 15px 20px;
+}
+
+.faq-card button {
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+
+.faq-card button:hover,
+.faq-card button:focus {
+  color: #2ca19c;
+  text-decoration: none;
+}
+
+.faq-card .card-body {
+  padding: 15px 20px;
+  color: #666;
+}

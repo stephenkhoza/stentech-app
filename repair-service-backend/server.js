@@ -33,10 +33,18 @@ app.use((req, res, next) => {
 });
 
 // Middleware
+// app.use(cors({
+//   origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+//   credentials: true,
+// }));
+
+
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
-  credentials: true,
+  origin: process.env.CORS_ORIGIN || 'https://stentech-app.vercel.app', // your frontend domain
+  credentials: true
 }));
+
 
 
 

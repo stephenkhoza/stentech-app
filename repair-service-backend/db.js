@@ -2,58 +2,48 @@
 require('dotenv').config();
 const { Pool } = require('pg');
 
-//Repair service database pool
+// === Repair Service Database Connection ===
 const repairDbPool = new Pool({
-  user: process.env.DB_USER || 'repair_admin',
-  host: process.env.DB_HOST || 'localhost',
-  database: process.env.DB_NAME || 'stentech_repair',
-  password: process.env.DB_PASSWORD || 'St1flerk@tut',
-  port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 5432,
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+  connectionString: process.env.REPAIR_DB_URL,
+  ssl: {
+    rejectUnauthorized: false, // Needed for Railway
+  },
 });
 
-// const repairDbPool = new Pool({
-//   user: process.env.REPAIR_DB_USER,
-//   host: process.env.REPAIR_DB_HOST,
-//   database: process.env.REPAIR_DB_NAME,
-//   password: process.env.REPAIR_DB_PASSWORD,
-//   port: parseInt(process.env.REPAIR_DB_PORT),
-//   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
-// });
-
-
 repairDbPool.on('connect', () => {
-  console.log('✅ Connected to repair_service database');
+  console.log('✅ Connected to REPAIR_DB_URL');
 });
 
 repairDbPool.on('error', (err) => {
-  console.error('🔥 Unexpected repairDbPool error:', err);
+  console.error('🔥 Repair DB connection error:', err);
   process.exit(1);
 });
 
-// Optional: Customer DB
-const customersDbPool = new Pool({
-  user: process.env.CUSTOMERS_DB_USER || process.env.DB_USER,
-  host: process.env.CUSTOMERS_DB_HOST || process.env.DB_HOST || 'localhost',
-  database: process.env.CUSTOMERS_DB_NAME || 'stentech_customers',
-  password: process.env.CUSTOMERS_DB_PASSWORD || process.env.DB_PASSWORD,
-  port: process.env.CUSTOMERS_DB_PORT ? parseInt(process.env.CUSTOMERS_DB_PORT) : 5432,
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
-});
+// === Customers Database (Optional) ===
+let customersDbPool;
 
-customersDbPool.on('connect', () => {
-  console.log('✅ Connected to customers database');
-});
+if (process.env.CUSTOMERS_DB_URL) {
+  customersDbPool = new Pool({
+    connectionString: process.env.CUSTOMERS_DB_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  });
 
-customersDbPool.on('error', (err) => {
-  console.error('🔥 Unexpected customersDbPool error:', err);
-});
+  customersDbPool.on('connect', () => {
+    console.log('✅ Connected to CUSTOMERS_DB_URL');
+  });
 
-// Export pools
+  customersDbPool.on('error', (err) => {
+    console.error('🔥 Customers DB connection error:', err);
+  });
+} else {
+  console.warn('⚠️ CUSTOMERS_DB_URL not set. Skipping customers DB connection.');
+}
+
+// === Export Pools ===
 module.exports = {
   repairDbPool,
   customersDbPool,
   pool: repairDbPool // backward compatibility
 };
-
-

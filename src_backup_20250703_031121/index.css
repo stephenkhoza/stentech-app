@@ -1,0 +1,242 @@
+/* Global CSS Reset and Base Styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: #212529;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Remove default margins and paddings */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+figure, hr,
+fieldset, legend {
+  margin: 0;
+  padding: 0;
+}
+
+/* List styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Buttons */
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* Form elements */
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Code */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Accessibility */
+:focus {
+  outline: 2px solid #0d9488;
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: #0d9488;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #0d9488;
+  color: white;
+}
+
+/* Scrollbar styles (Webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d9488;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f766e;
+}
+
+/* Root element */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Fix for iOS Safari viewport units */
+@supports (-webkit-touch-callout: none) {
+  .vh-100 {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  
+  img {
+    page-break-inside: avoid;
+  }
+  
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #000000;
+    --text-dark: #000000;
+    --text-light: #000000;
+    --border-light: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  /* Uncomment and customize if you want dark mode support
+  body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  */
+}
+
+/* Loading spinner styles (for initial app load) */
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(13, 148, 136, 0.3);
+  border-radius: 50%;
+  border-top-color: #0d9488;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #0d9488;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

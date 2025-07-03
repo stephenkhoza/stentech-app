@@ -1,0 +1,86 @@
+.carousel {
+  margin-top: 0;
+  padding-top: 130px; /* Adjust for fixed header height */
+}
+
+.carousel-item {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.carousel-caption {
+  bottom: 50%;
+  transform: translateY(50%);
+  padding: 0 5%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.carousel-caption h1,
+.carousel-caption h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.carousel .btn {
+  background-color: #2ca19c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+}
+
+.carousel .btn:hover {
+  background-color: #218a83;
+}
+
+/* Controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+}
+
+.carousel-control-prev {
+  left: 20px;
+}
+
+.carousel-control-next {
+  right: 20px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #2ca19c;
+  opacity: 1;
+}
+
+/* Indicators */
+.carousel-indicators button {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.carousel-indicators button.active {
+  background-color: #2ca19c;
+}

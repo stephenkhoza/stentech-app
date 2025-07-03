@@ -302,7 +302,10 @@ const ComputerRepair = () => {
       `}</style>
 
       {/* Page Banner */}
-      <section className="page-banner">
+      <section className="page-banner"
+      style={{
+    backgroundImage: "url('/assets/computer-bg.jpg')",
+  }}>
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-shadow">
             Professional Computer Repair Services

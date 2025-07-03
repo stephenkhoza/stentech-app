@@ -235,49 +235,46 @@ const LaptopRepair = () => {
                 <span>Select Your Laptop Brand</span>
               </h2>
               <ul
-                role="list"
-                style={styles.gridContainer}
-                data-testid="all-products-list"
-              >
-                {laptopBrands.map((brand) => (
-                  <li key={brand.id} role="listitem">
-                    <a
-                      href={brand.link}
-                      style={styles.deviceCard}
-                      aria-label={`Select ${brand.name}`}
-                      onMouseEnter={handleMouseEnter}
-                      onMouseLeave={handleMouseLeave}
-                      onFocus={(e) => {
-                        e.currentTarget.style.outline = '3px solid rgba(44, 161, 156, 0.3)';
-                        e.currentTarget.style.outlineOffset = '2px';
-                      }}
-                      onBlur={(e) => {
-                        e.currentTarget.style.outline = 'none';
-                      }}
-                    >
-                      <div style={styles.detailsContainer}>
-                        <div style={styles.leftCol}>
-                          <img
-                            alt={brand.alt}
-                            className="device-image"
-                            role="presentation"
-                            src={brand.image}
-                            style={styles.deviceImage}
-                            width="48"
-                            height="48"
-                          />
-                          <span 
-                            className="device-title"
-                            style={styles.deviceTitle}
-                          >
-                            {brand.name}
-                          </span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+  style={styles.gridContainer}
+  data-testid="all-products-list"
+>
+  {laptopBrands.map((brand) => (
+    <li key={brand.id}>
+      <a
+        href={brand.link}
+        style={styles.deviceCard}
+        aria-label={`Select ${brand.name}`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onFocus={(e) => {
+          e.currentTarget.style.outline = '3px solid rgba(44, 161, 156, 0.3)';
+          e.currentTarget.style.outlineOffset = '2px';
+        }}
+        onBlur={(e) => {
+          e.currentTarget.style.outline = 'none';
+        }}
+      >
+        <div style={styles.detailsContainer}>
+          <div style={styles.leftCol}>
+            <img
+              alt={brand.alt}
+              className="device-image"
+              role="presentation"
+              src={brand.image}
+              style={styles.deviceImage}
+              width="48"
+              height="48"
+            />
+            <span className="device-title" style={styles.deviceTitle}>
+              {brand.name}
+            </span>
+          </div>
+        </div>
+      </a>
+    </li>
+  ))}
+</ul>
+
             </div>
           </div>
         </div>

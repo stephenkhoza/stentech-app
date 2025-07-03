@@ -1,0 +1,8 @@
+/* Add this to the top of your Header.css file */
+:root {
+  --header-height: 80px;
+  --viewport-offset: 100vh;
+}
+
+/* Then replace the problematic line with: */
+max-height: calc(var(--viewport-offset) - var(--header-height));

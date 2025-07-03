@@ -613,8 +613,8 @@ const handleSubmit = async () => {
                       style={styles.checkbox}
                     />
                     <label style={styles.termsText}>
-                      I agree to the <a href="#" style={styles.link}>Terms & Conditions</a> and 
-                      <a href="#" style={{...styles.link, marginLeft: '4px'}}>Privacy Policy</a> *
+                      I agree to the <a href="/" style={styles.link}>Terms & Conditions</a> and 
+                      <a href="/" style={{...styles.link, marginLeft: '4px'}}>Privacy Policy</a> *
                     </label>
                   </div>
                 </div>

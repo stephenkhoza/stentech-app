@@ -46,17 +46,12 @@ const IDeviceRepairs = () => {
                 <span>Select your iDevice</span>
               </h2>
               <ul
-                role="list"
                 className="row-alternative"
                 id="allproducts"
                 data-testid="all-products-list"
               >
                 {devices.map((device) => (
-                  <li
-                    key={device.id}
-                    role="listitem"
-                    className="form-selector"
-                  >
+                  <li key={device.id} className="form-selector">
                     <a 
                       href={device.link} 
                       className="unsigned-more-product-card device-link"

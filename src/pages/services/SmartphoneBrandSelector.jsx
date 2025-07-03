@@ -73,46 +73,45 @@ const SmartphoneBrandSelector = () => {
               <h2 className="device-heading">
                 <span>Select your smartphone brand</span>
               </h2>
-              <ul
-                role="list"
-                className="row-alternative"
-                id="allbrands"
-                data-testid="all-brands-list"
-              >
-                {brands.map((brand) => (
-                  <li
-                    key={brand.id}
-                    role="listitem"
-                    className="form-selector"
-                  >
-                    <a 
-                      href={brand.link} 
-                      className="unsigned-more-product-card device-link"
-                      aria-label={`Select ${brand.name}`}
-                      id={brand.id}
-                    >
-                      <div className="details-container">
-                        <div className="form-selector-left-col">
-                          <img
-                            alt={brand.alt}
-                            className="device-image"
-                            role="presentation"
-                            src={brand.image}
-                            width="42"
-                            height="42"
-                            onError={(e) => {
-                              e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0yNCAzNkMzMC42Mjc0IDM2IDM2IDMwLjYyNzQgMzYgMjRDMzYgMTcuMzcyNiAzMC42Mjc0IDEyIDI0IDEyQzE3LjM3MjYgMTIgMTIgMTcuMzcyNiAxMiAyNEMxMiAzMC42Mjc0IDE3LjM3MjYgMzYgMjQgMzZaIiBzdHJva2U9IiM5Q0EzQUYiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4K';
-                            }}
-                          />
-                          <span className="form-selector-title product-form-selector-title">
-                            {brand.name}
-                          </span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+             <ul
+  className="row-alternative"
+  id="allbrands"
+  data-testid="all-brands-list"
+>
+  {brands.map((brand) => (
+    <li
+      key={brand.id}
+      className="form-selector"
+    >
+      <a 
+        href={brand.link} 
+        className="unsigned-more-product-card device-link"
+        aria-label={`Select ${brand.name}`}
+        id={brand.id}
+      >
+        <div className="details-container">
+          <div className="form-selector-left-col">
+            <img
+              alt={brand.alt}
+              className="device-image"
+              role="presentation"
+              src={brand.image}
+              width="42"
+              height="42"
+              onError={(e) => {
+                e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0yNCAzNkMzMC42Mjc0IDM2IDM2IDMwLjYyNzQgMzYgMjRDMzYgMTcuMzcyNiAzMC42Mjc0IDEyIDI0IDEyQzE3LjM3MjYgMTIgMTIgMTcuMzcyNiAxMiAyNEMxMiAzMC42Mjc0IDE3LjM3MjYgMzYgMjQgMzZaIiBzdHJva2U9IiM5Q0EzQUYiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4K';
+              }}
+            />
+            <span className="form-selector-title product-form-selector-title">
+              {brand.name}
+            </span>
+          </div>
+        </div>
+      </a>
+    </li>
+  ))}
+</ul>
+
             </div>
           </div>
         </div>

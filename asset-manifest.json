@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/stentech-app/static/css/main.3600820c.css",
+    "main.js": "/stentech-app/static/js/main.eecd2c97.js",
+    "index.html": "/stentech-app/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.3600820c.css",
+    "static/js/main.eecd2c97.js"
+  ]
+}

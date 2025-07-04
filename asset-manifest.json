@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.3866ea3c.css",
-    "main.js": "/static/js/main.16de3731.js",
-    "index.html": "/index.html"
+    "main.css": "/stentech-app/static/css/main.3866ea3c.css",
+    "main.js": "/stentech-app/static/js/main.0e53d7d9.js",
+    "index.html": "/stentech-app/index.html"
   },
   "entrypoints": [
     "static/css/main.3866ea3c.css",
-    "static/js/main.16de3731.js"
+    "static/js/main.0e53d7d9.js"
   ]
 }

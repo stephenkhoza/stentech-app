@@ -31,7 +31,9 @@ const TrackRepair = () => {
     <>
       <section
         className="page-banner"
-        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/assets/repair-tracking-banner.jpg)` }}
+       
+        style={{ backgroundImage: `url("${process.env.PUBLIC_URL}/assets/repair-tracking-banner.jpg")` }}
+
       >
         <div className="container text-center">
           <h1>Track Your Repair</h1>

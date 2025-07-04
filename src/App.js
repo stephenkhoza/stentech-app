@@ -1,5 +1,9 @@
 // src/App.js
+
 import React, { useState, useEffect } from 'react';
+import './App.css'; // or './App.css'
+
+
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -22,6 +26,7 @@ import Pricing from './pages/process/Pricing';
 import TrackRepair from './pages/process/TrackRepair';
 import AboutUs from './pages/company/AboutUs';
 import WhyChooseUs from './pages/company/WhyChooseUs';
+import MacBookRepairPricing from './pages/services/MacBookRepairPricing';
 
 
 function AppWrapper() {
@@ -61,6 +66,7 @@ function AppWrapper() {
           <Route path="/track-repair" element={<TrackRepair />} />
           <Route path="/about" element={<AboutUs/>} />
           <Route path="/why-choose-us" element={<WhyChooseUs />} />
+          <Route path="/services/MacBookRepairPricing" element={<MacBookRepairPricing />} />
 
 
 

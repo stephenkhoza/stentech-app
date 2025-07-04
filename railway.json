@@ -1,0 +1,12 @@
+{
+  "build": {
+    "builder": "nixpacks",
+    "nixpacksPlan": {
+      "phases": {
+        "setup": {
+          "nixPkgs": ["nodejs", "postgresql"]
+        }
+      }
+    }
+  }
+}

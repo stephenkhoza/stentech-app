@@ -1,6 +1,7 @@
 import React from 'react';
 import './IDeviceRepairs.css'; // Import the CSS file for styling
 
+
 const IDeviceRepairs = () => {
   const devices = [
     {
@@ -8,7 +9,7 @@ const IDeviceRepairs = () => {
       name: "Mac",
       image: "/images/mac.jpg",
       alt: "Mac Device",
-      link: "/pages/Services/apple-repair-price.html"
+      link: "/services/MacBookRepairPricing"
     },
     {
       id: "SG003",

@@ -6,6 +6,10 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
+// server.js (top, right after require('dotenv').config())
+console.log('🔍 Environment variables check:');
+console.log('REPAIR_DB_URL:', process.env.REPAIR_DB_URL ? '[REPAIR_DB_URL loaded]' : 'NOT SET or undefined');
+console.log('CUSTOMERS_DB_URL:', process.env.CUSTOMERS_DB_URL ? '[CUSTOMERS_DB_URL loaded]' : 'NOT SET or undefined');
 
 
 // Debug: Check if environment variables are loaded
